@@ -9,12 +9,12 @@ phases:
       - curl -sL https://deb.nodesource.com/setup_12.x | bash -
       - apt-get install -y nodejs
       - npm install --unsafe-perm 
-      - npm build 
-  post_build:
+
+  build:
     commands:
-      - cd $CODEBUILD_SRC_DIR
-      - rm -rf /tmp/src/
+      - npm build 
       - echo Build completed on 'date'
+
 artifacts:
   type: zip
   files:
