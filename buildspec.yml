@@ -15,7 +15,12 @@ phases:
       - npm run build 
       - echo Build completed on $(date)
 
+  post_build:
+    commands:
+      - cd build/
+      - zip ../artifact.zip -r *
+
 artifacts:
   type: zip
   files:
-    - build/*  
+    - /tmp/src/artifact.zip  
