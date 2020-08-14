@@ -15,6 +15,7 @@ phases:
       - cd $CODEBUILD_SRC_DIR
       - rm -rf /tmp/src/
       - echo Build completed on 'date'
-  artifacts:
-    files:
-      - build/*  
+artifacts:
+  type: zip
+  files:
+    - build/*  
