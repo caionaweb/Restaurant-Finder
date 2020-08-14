@@ -15,11 +15,6 @@ phases:
       - npm run build 
       - echo Build completed on $(date)
 
-  post_build:
-    commands:
-      - cd build/
-      - zip ../artifact.zip -r *
-
 artifacts:
     files:
       - '**/*'
