@@ -12,8 +12,8 @@ phases:
 
   build:
     commands:
-      - npm build 
-      - echo Build completed on 'date'
+      - npm run build 
+      - echo Build completed on $(date)
 
 artifacts:
   type: zip
