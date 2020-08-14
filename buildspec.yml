@@ -21,5 +21,6 @@ phases:
       - zip ../artifact.zip -r *
 
 artifacts:
-  files:
-    - /tmp/src/build/*
+    files:
+      - '**/*'
+    base-directory: build
