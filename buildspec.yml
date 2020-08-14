@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - mkdir /tmp/src/
+      - mv $CODEBUILD_SRC_DIR/* /tmp/src/
+      - cd /tmp/src/
+      - curl -sL https://deb.nodesource.com/setup_12.x | bash -
+      - apt-get install -y nodejs
+      - npm install --unsafe-perm 
+      - npm build 
+  post_build:
+    commands:
+      - cd $CODEBUILD_SRC_DIR
+      - rm -rf /tmp/src/
+      - echo Build completed on 'date'
+  artifacts:
+    files:
+      - build/*  
